@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="drm", DRIVERS=="vc4-drm", TAG+="systemd", PROGRAM="/usr/bin/systemd-escape -p %N", ENV{SYSTEMD_WANTS}+="boomer@%c.service"

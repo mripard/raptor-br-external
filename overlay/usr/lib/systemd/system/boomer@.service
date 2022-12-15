@@ -1,0 +1,7 @@
+[Unit]
+Description=Boomer Test Program running on %f
+BindsTo=%i
+After=%i
+
+[Service]
+ExecStart=/usr/bin/boomer -D %f
