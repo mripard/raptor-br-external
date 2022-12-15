@@ -1,0 +1,9 @@
+config BR2_PACKAGE_BOOMER
+	bool "boomer"
+	depends on BR2_PACKAGE_HOST_RUSTC_TARGET_ARCH_SUPPORTS
+	select BR2_PACKAGE_HOST_RUSTC
+	help
+	  Boomer is a KMS application meant to run on a DUT as part of a CI
+	  infra.
+
+	  https://github.com/mripard/boomer

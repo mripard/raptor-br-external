@@ -1,0 +1,1 @@
+source "$BR2_EXTERNAL_RAPTOR_PATH/package/boomer/Config.in"
