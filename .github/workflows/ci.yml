@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            bash \
+            bzr \
+            bc \
+            binutils \
+            build-essential \
+            bzip2 \
+            cpio \
+            cvs \
+            diffutils \
+            file \
+            findutils \
+            g++ \
+            gcc \
+            git \
+            gzip \
+            make \
+            mercurial \
+            openssh-client \
+            patch \
+            perl \
+            python3 \
+            rsync \
+            sed \
+            subversion \
+            tar \
+            unzip \
+            wget
+
+      - name: Build Image
+        run: make image
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: rootfs
+          path: output/images/rootfs.cpio.xz
