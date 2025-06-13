@@ -5,9 +5,9 @@ buildroot/.git:
 	@git submodule update
 
 buildroot: buildroot/.git
-	pushd buildroot
-	git am -s ../patches/*.patch
-	popd
+	(cd buildroot; \
+		git am -s ../patches/*.patch \
+	)
 
 output/.config: buildroot
 	make -C buildroot BR2_EXTERNAL=../raptor O=$(shell pwd)/output raptor_defconfig
