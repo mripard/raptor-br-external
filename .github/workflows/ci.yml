@@ -45,6 +45,7 @@ jobs:
             gcc \
             git \
             gzip \
+            libclang-dev \
             make \
             mercurial \
             openssh-client \
