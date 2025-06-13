@@ -5,7 +5,7 @@ buildroot/.git:
 	@git submodule update
 
 buildroot: buildroot/.git
-	(cd buildroot; \
+	@(cd buildroot; \
 		git am -s ../patches/*.patch \
 	)
 
