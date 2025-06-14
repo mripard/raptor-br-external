@@ -46,6 +46,7 @@ jobs:
             git \
             gzip \
             libclang-dev \
+            linux-headers-$(uname -r) \
             make \
             mercurial \
             openssh-client \
