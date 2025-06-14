@@ -41,12 +41,11 @@ jobs:
             diffutils \
             file \
             findutils \
-            g++ \
-            gcc \
+            g++-multilib \
+            gcc-multilib \
             git \
             gzip \
             libclang-dev \
-            linux-headers-$(uname -r) \
             make \
             mercurial \
             openssh-client \
